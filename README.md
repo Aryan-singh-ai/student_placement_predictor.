@@ -2,7 +2,7 @@
 A Machine Learning project that predicts whether a student will get placed or not based on academic and skill-based inputs.
 
 🔗 Live Demo
-👉 https://student-placement-predictor-woqdwdv6vka99anhve9wqq.streamlit.app/
+👉 https://studentplacementpredictor-bxpsvu3wueb8nfqhhmrnrh.streamlit.app/
 
 📌 Project Overview
 This project uses Machine Learning algorithms to analyze student data such as academic performance, skills, and experience to predict placement outcomes.
@@ -35,7 +35,7 @@ Academic Performance
 🚀 How to Run
 1️⃣ Clone the repository
 
-git clone https://github.com/vaishcod/student-placement-predictor.git
+git clone https://github.com/Aryan-singh-ai/student_placement_predictor.
 2️⃣ Go to project folder
 
 cd student-placement-predictor
