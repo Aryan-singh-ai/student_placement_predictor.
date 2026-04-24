@@ -2,6 +2,7 @@ import streamlit as st
 from model import predict_placement
 
 st.title("🎓 Student Placement Predictor")
+st.write("Predict placement chances using machine learning")
 
 cgpa = st.slider("CGPA", 0.0, 10.0, 7.0)
 skills = st.slider("Skills", 1, 5, 3)
@@ -9,10 +10,16 @@ internships = st.slider("Internships", 0, 5, 1)
 projects = st.slider("Projects", 0, 5, 2)
 communication = st.slider("Communication", 1, 5, 3)
 
-if st.button("Predict"):
-    result = predict_placement([cgpa, skills, internships, projects, communication])
+if st.button("Predict placement"):
+    predictions, probability, accuracy = predict_placement(
+        [cgpa, skills, internships, projects, communication]
+    )
 
-    if result == 1:
-        st.success("🎉 Likely to get placed")
+    st.subheader(" Prediction Result")
+    
+    if prediction == 1:
+        st.success(f"🎉 Likely to get placed ({probability*100:.2f}% chance)")
     else:
-        st.error("❌ Not likely to get placed")
+        st.error(f"❌ Less chance of placement ({probability*100:.2f}% chance)")
+
+    st.info(f"Model Accuracy: {accuracy*100:.2f}%")
